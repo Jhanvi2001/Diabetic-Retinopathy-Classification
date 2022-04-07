@@ -1,10 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Thu Mar 24 19:43:16 2022
-
-@author: sjhan
-"""
-
 import keras
 import tensorflow
 import os
