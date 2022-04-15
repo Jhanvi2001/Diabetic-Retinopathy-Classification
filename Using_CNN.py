@@ -1,10 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Thu Mar 24 19:43:16 2022
-
-@author: sjhan
-"""
-
 import keras
 import tensorflow
 import os
@@ -129,64 +122,3 @@ print("\nTesting Accuracy Score:-",CNNScore)
 val_loss,val_acc=cnn_model.evaluate(x_test,y_test)
 print(val_loss)
 print(val_acc)
-
-####
-extractCNN = Model(cnn_model.inputs, cnn_model.layers[-4].output)
-
-#del(data)
-#del(labels)
-feat_trainCNN  = extractCNN.predict(x_train)  
-feat_testCNN = extractCNN.predict(x_test)      
-
-print(feat_trainCNN.shape)
-
-###################SVM##################
-
-from sklearn.svm import SVC
-
-svm = SVC(kernel='linear')
-svm.fit(feat_trainCNN,np.argmax(y_train,axis=1))
-
-TrainSVMScoreCNN=svm.score(feat_trainCNN,np.argmax(y_train,axis=1))*100
-print("SVM Training Accuracy Score:-",TrainSVMScoreCNN)
-
-TestSVMScoreCNN=svm.score(feat_testCNN,np.argmax(y_test,axis=1))*100
-print("\nSVM Testing Accuracy Score:-",TestSVMScoreCNN)
-
-
-# ################KNN####################
-# from sklearn.neighbors import KNeighborsClassifier
-
-# knn = KNeighborsClassifier(n_neighbors=5)
-# knn.fit(feat_trainCNN,np.argmax(y_train,axis=1))
-
-# TrainKNNScoreCNN=knn.score(feat_trainCNN,np.argmax(y_train,axis=1))*100
-# print("KNN Training Accuracy Score:-",TrainKNNScoreCNN)
-
-# TestKNNScoreCNN=knn.score(feat_testCNN,np.argmax(y_test,axis=1))*100
-# print("\nKNN Testing Accuracy Score:-",TestKNNScoreCNN)
-
-# ####################Decision Tree##############
-# from sklearn.tree import DecisionTreeClassifier
-
-# clf = DecisionTreeClassifier(random_state=0)
-# clf = clf.fit(feat_trainCNN,np.argmax(y_train,axis=1))
-
-# TrainDecisionScoreCNN=clf.score(feat_trainCNN,np.argmax(y_train,axis=1))*100
-# print("Decision Tree Training Accuracy Score:-",TrainDecisionScoreCNN)
-
-
-# TestDecisionScoreCNN=clf.score(feat_testCNN,np.argmax(y_test,axis=1))*100
-# print("\nDecision Tree Testing Accuracy Score:-",TestDecisionScoreCNN)
-
-# #####################Random Forest###############################
-# from sklearn.naive_bayes import GaussianNB
-
-# gnb = GaussianNB()
-# gnb.fit(feat_trainCNN,np.argmax(y_train,axis=1))
-
-# TrainNBScoreCNN=gnb.score(feat_trainCNN,np.argmax(y_train,axis=1))*100
-# print("\nGaussianNaive Bayes Training Accuracy Score:-",TrainNBScoreCNN)
-
-# TestNBScoreCNN=gnb.score(feat_testCNN,np.argmax(y_test,axis=1))*100
-# print("\nGaussianNaive Bayes Testing Accuracy Score:-",TestNBScoreCNN)
