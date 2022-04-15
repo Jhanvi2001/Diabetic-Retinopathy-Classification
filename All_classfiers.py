@@ -64,8 +64,6 @@ print(labels.shape)
 #Split into train test split
 
 test_ratio = 0.40
-
-# train is now 75% of the entire data set
 x_train, x_test, y_train, y_test = train_test_split(data, labels, test_size=test_ratio)
 
 print("Train images:",x_train.shape)
