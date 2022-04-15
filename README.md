@@ -2,7 +2,7 @@
 
 ## CNN
 
-Training accuracy:94
+Training accuracy:94.49
 
 Test acc:72.35
 
