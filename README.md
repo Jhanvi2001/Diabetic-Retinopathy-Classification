@@ -4,7 +4,7 @@
 
 Training accuracy:94
 
-Test acc:72
+Test acc:72.35
 
 ## CNN-SVM
 
