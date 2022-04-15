@@ -1,20 +1,20 @@
 # Diabetic-Retinopathy-Classification
 CNN
-Training accuracy:87.44
-Test acc:74
+Training accuracy:94
+Test acc:72
 
 CNN-SVM
 Training accuracy:99.5
-Test acc:71.33
+Test acc:71.88
 
 CNN-KNN
-Training accuracy:86.53
-Test acc:73.11
+Training accuracy:86.48
+Test acc:72.22
 
 CNN-Decision tree
 Training accuracy:99.5
-Test acc:64.85
+Test acc:64.095
 
 CNN-Gausian Naive bayes
-Training accuracy:50
-Test acc:44.45
+Training accuracy:35.093
+Test acc:31.47
