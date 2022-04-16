@@ -1,0 +1,15 @@
+#write this code below cnn model fitting
+
+from keras.preprocessing import image
+import numpy as np
+from skimage import transform
+img = image.load_img('new img name.png', target_size=(width,height))
+img.show()
+img = np.array(img, dtype="float32")
+from skimage import transform
+img = transform.resize(img, (150, 150, 3))
+img = np.expand_dims(img, axis =0)
+pred = cnn_model.predict(img)
+print(pred)
+pred_ = np.argmax(pred, axis=1)
+print(pred_)
