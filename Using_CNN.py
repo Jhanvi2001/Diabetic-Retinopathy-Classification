@@ -114,7 +114,7 @@ trainpredIdxs = np.argmax(trainpredIdxs, axis=1)
 trainCNNScore=accuracy_score(trainpredIdxs,y_train.argmax(axis=1))*100
 CNNScore=accuracy_score(predIdxs,y_test.argmax(axis=1))*100
 
-print("\nTrainig Accuracy Score:-",trainCNNScore)
+print("\nTraining Accuracy Score:-",trainCNNScore)
 print("\nTesting Accuracy Score:-",CNNScore)
 
 
